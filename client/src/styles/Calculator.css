@@ -1,0 +1,107 @@
+.calculator-header {
+  background-color: #4d89fe;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 90px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.calculator-logo {
+  width: 160px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(1.1);
+  margin-bottom: -8px;
+}
+
+.calculator-tagline {
+  color: #FFFFFF;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  margin-top: 0;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.calculator-tabs {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  height: 48px;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 170px auto 40px;
+  padding: 0 20px;
+  position: relative; 
+  z-index: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Enhanced Tab Styles */
+.MuiTabs-root {
+  min-height: 48px;
+  height: 48px;
+}
+
+.MuiTab-root {
+  min-width: 120px !important;
+  text-transform: none !important;
+  padding: 6px 24px !important;
+  height: 48px !important;
+  transition: all 0.3s ease !important;
+}
+
+.MuiTab-root:hover {
+  background-color: rgba(77, 137, 254, 0.05);
+}
+
+.MuiTab-root.Mui-selected {
+  background-color: rgba(77, 137, 254, 0.1);
+}
+
+.calculator-title {
+  color: #4d89fe;
+  text-align: center;
+  margin-bottom: 16px !important;
+  font-weight: 600 !important;
+}
+
+.calculator-description {
+  text-align: center;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto 32px !important;
+  line-height: 1.6 !important;
+  font-size: 1rem !important;
+} 

@@ -1,0 +1,43 @@
+{
+  "paperRate": 100,
+  "plateCost4C": 2000,
+  "newSizePlateCost4C": 2500,
+  "plateCost1C": 1000,
+  "newSizePlateCost1C": 1500,
+  "printingCostPer1000_4C": 300,
+  "printingCostPer1000_1C": 150,
+  "laminationRates": {
+    "None": 0,
+    "Gloss BOPP": 1.8,
+    "Matt BOPP": 1.8,
+    "Gloss Thermal": 3.2,
+    "Matt Thermal": 3.2,
+    "Velvet": 11.25
+  },
+  "newSizeLaminationRates": {
+    "None": 0,
+    "Gloss BOPP": 2.5,
+    "Matt BOPP": 2.5,
+    "Gloss Thermal": 4.5,
+    "Matt Thermal": 4.5,
+    "Velvet": 18
+  },
+  "minimumLaminationCosts": {
+    "BOPP": 600,
+    "Thermal": 700,
+    "Velvet": 700
+  },
+  "spotUVRate": 2.5,
+  "spotUVMinimum": 3500,
+  "dripOffRate": 2.5,
+  "dripOffMinimum": 4500,
+  "coatingRate": 1.2,
+  "coatingMinimum": 500,
+  "bindingRates": {
+    "none": 0,
+    "staple": 2,
+    "spiral": 15,
+    "wiro": 15,
+    "perfect": 25
+  }
+} 

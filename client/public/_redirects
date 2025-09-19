@@ -1,0 +1,8 @@
+# Redirect /ownerpanel/ to /ownerpanel
+/ownerpanel/ /ownerpanel 301
+
+# API routes should be handled by the server, not the static files
+/api/* /:splat 200
+
+# Serve index.html for all other routes
+/* /index.html 200 

@@ -1,0 +1,14 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect /ownerpanel/ to /ownerpanel
+RewriteRule ^ownerpanel/$ /ownerpanel [R=301,L]
+
+# API routes should be handled by the server, not static files
+# Ensure API requests are properly forwarded to the backend
+RewriteRule ^api/(.*)$ http://localhost:5001/api/$1 [P,L]
+
+# Serve index.html for all other routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L] 

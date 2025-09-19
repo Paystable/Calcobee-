@@ -1,0 +1,8 @@
+# Redirect /ownerpanel/ to /ownerpanel
+/ownerpanel/ /ownerpanel 301
+
+# Redirect /api/config/ to /api/config
+/api/config/ /api/config 301
+
+# Serve index.html for all routes
+/* /index.html 200 

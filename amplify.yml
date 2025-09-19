@@ -1,0 +1,79 @@
+version: 1
+applications:
+  - appRoot: .
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - 'echo "Starting build process..."'
+            - 'echo "Current directory: $(pwd)"'
+            - 'ls -la'
+            - 'chmod +x amplify-build.sh'
+        build:
+          commands:
+            - './amplify-build.sh'
+            - 'echo "Build completed"'
+            - 'ls -la build/client'
+      artifacts:
+        baseDirectory: build/client
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - client/node_modules/**/*
+    backend:
+      phases:
+        preBuild:
+          commands:
+            - 'echo "Backend build already handled by frontend build"'
+        build:
+          commands:
+            - 'echo "Using server files from main build"'
+      artifacts:
+        baseDirectory: build/server
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - server/node_modules/**/*
+customHeaders:
+  - pattern: '**/*'
+    headers:
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'X-Frame-Options'
+        value: 'SAMEORIGIN'
+      - key: 'X-XSS-Protection'
+        value: '1; mode=block'
+  - pattern: '*.js'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/javascript'
+  - pattern: '*.css'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/css'
+  - pattern: '*.html'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/html'
+  - pattern: '*.json'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/json'
+redirects:
+  - source: '/admin'
+    target: '/index.html'
+    status: 200
+  - source: '/admin/*'
+    target: '/index.html'
+    status: 200
+  - source: '/api/*'
+    target: '/api/$1'
+    status: 200
+  - source: '/*'
+    target: '/index.html'
+    status: 200

@@ -1,0 +1,16 @@
+{
+  "api": {
+    "calcobee": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "NONE"
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  }
+}

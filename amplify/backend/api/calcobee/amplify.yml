@@ -1,0 +1,68 @@
+version: 1
+applications:
+  - appRoot: .
+    backend:
+      phases:
+        preBuild:
+          commands:
+            - 'echo "Starting backend build..."'
+            - 'echo "Current directory: $(pwd)"'
+            - 'echo "Directory contents:"'
+            - 'ls -la'
+            - 'cd amplify/backend/api/calcobee'
+            - 'echo "API directory contents:"'
+            - 'ls -la'
+            - 'npm install'
+            - 'chmod +x build.sh'
+        build:
+          commands:
+            - 'echo "Building backend..."'
+            - './build.sh'
+      artifacts:
+        baseDirectory: amplify/backend/api/calcobee
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - amplify/backend/api/calcobee/node_modules/**/*
+customHeaders:
+  - pattern: '**/*'
+    headers:
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'X-Frame-Options'
+        value: 'SAMEORIGIN'
+      - key: 'X-XSS-Protection'
+        value: '1; mode=block'
+  - pattern: '*.js'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/javascript'
+  - pattern: '*.css'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/css'
+  - pattern: '*.html'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/html'
+  - pattern: '*.json'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/json'
+
+redirects:
+  - source: '/admin'
+    target: '/index.html'
+    status: 200
+  - source: '/admin/*'
+    target: '/index.html'
+    status: 200
+  - source: '/api/*'
+    target: '/api/$1'
+    status: 200
+  - source: '/*'
+    target: '/index.html'
+    status: 200

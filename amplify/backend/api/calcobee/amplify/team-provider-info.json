@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-calcobee-dev-5df0b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::008376430362:role/amplify-calcobee-dev-5df0b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::008376430362:role/amplify-calcobee-dev-5df0b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-calcobee-dev-5df0b-deployment",
+      "UnauthRoleName": "amplify-calcobee-dev-5df0b-unauthRole",
+      "StackName": "amplify-calcobee-dev-5df0b",
+      "StackId": "arn:aws:cloudformation:us-east-1:008376430362:stack/amplify-calcobee-dev-5df0b/b7f42360-2815-11f0-8f08-0affc3de2583",
+      "AmplifyAppId": "d2dnpowmj7kagf"
+    }
+  }
+}
